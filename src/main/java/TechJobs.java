@@ -118,8 +118,24 @@ public class TechJobs {
     }
 
     // Print a list of jobs
+    // TODO: this appears to be working, outputs match but still show error in testing
+    // TODO: same thing is happening with the No Results too, the test appears to have a type??
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-
-        System.out.println("printJobs is not implemented yet");
+//        check if someJobs has entries
+        if (someJobs.size() == 0){
+            System.out.println("No Results");
+            return;
+        }
+//        loop through Arraylist to get each job Hashmap
+        for (HashMap<String, String> job : someJobs){
+//            Loop through each job entry and display data
+            System.out.println("\n*****");
+            for(Map.Entry<String, String> entry : job.entrySet()){
+                String key = entry.getKey();
+                String value = entry.getValue();
+                System.out.println(key + ": " + value);
+            }
+            System.out.println("*****");
+        }
     }
 }
